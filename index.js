@@ -8,9 +8,10 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    console.log(JSON.stringify(req.headers));
-    res.redirect("/banner-dashboard")
+app.get('/:name', (req, res) => {
+  var name = req.params.name
+  console.log(JSON.stringify(req.headers))
+  res.redirect("https://touch-msg.com/in/f-ipd?f=" + name)
 });
 
 app.listen(process.env.PORT || 80, () => {
